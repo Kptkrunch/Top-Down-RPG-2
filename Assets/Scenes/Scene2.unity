@@ -142,9 +142,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: ExitTrigger
       objectReference: {fileID: 0}
+    - target: {fileID: 4262312106297550644, guid: 547a94fd563357648ac3158550409011, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.95
+      objectReference: {fileID: 0}
     - target: {fileID: 4755303786910151666, guid: 547a94fd563357648ac3158550409011, type: 3}
       propertyPath: _scene
       value: TestScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 4755303786910151666, guid: 547a94fd563357648ac3158550409011, type: 3}
+      propertyPath: sceneToLoad
+      value: Scene1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4755303786910151666, guid: 547a94fd563357648ac3158550409011, type: 3}
+      propertyPath: fromAreaName
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4755303786910151666, guid: 547a94fd563357648ac3158550409011, type: 3}
+      propertyPath: areaTransitionName
+      value: 1-2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4755303786910151666, guid: 547a94fd563357648ac3158550409011, type: 3}
+      propertyPath: nextLocationSpawnPoint
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5823555285348549708, guid: 547a94fd563357648ac3158550409011, type: 3}
+      propertyPath: areaName
+      value: Scene1-2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5823555285348549708, guid: 547a94fd563357648ac3158550409011, type: 3}
+      propertyPath: spawnPointName
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5823555285348549708, guid: 547a94fd563357648ac3158550409011, type: 3}
+      propertyPath: transitionName
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8298924099580087952, guid: 547a94fd563357648ac3158550409011, type: 3}
       propertyPath: m_RootOrder

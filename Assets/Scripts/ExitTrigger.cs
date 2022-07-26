@@ -1,17 +1,23 @@
 using System;
 using UnityEngine.SceneManagement;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class ExitTrigger : MonoBehaviour {
 
-	public string scene;
-	public string nextAreaSpawnPoint;
+	public string sceneToLoad;
+	public string nextLocationSpawnPoint;
+
+	public AreaSpawnPoint areaSpawnPoint;
+
+	private void Start() {
+		//areaSpawnPoint.spawnPointName = fromAreaName;
+	}
 
 	private void OnTriggerEnter2D(Collider2D other) {
 		if (other.CompareTag("Player")) {
-			PlayerController.Instance.nextAreaSpawnPoint = nextAreaSpawnPoint;
-			SceneManager.LoadScene(scene, LoadSceneMode.Single);
+
+			SceneManager.LoadScene(sceneToLoad, LoadSceneMode.Single);
+			PlayerController.Instance.spawnLocationName = nextLocationSpawnPoint;
 		}
 	}
 }

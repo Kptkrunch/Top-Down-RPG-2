@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour {
 	private bool _isMoving;
 
 	public static PlayerController Instance;
-	public string nextAreaSpawnPoint;
+	public string spawnLocationName;
 	
 	[SerializeField, Range(0f, 100f)] private float moveSpeed = 5f;
 	void Awake() {
