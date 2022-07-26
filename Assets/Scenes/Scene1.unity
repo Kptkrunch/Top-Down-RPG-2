@@ -135,8 +135,16 @@ PrefabInstance:
       value: ExitTrigger
       objectReference: {fileID: 0}
     - target: {fileID: 4755303786910151666, guid: 547a94fd563357648ac3158550409011, type: 3}
+      propertyPath: scene
+      value: Scene2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4755303786910151666, guid: 547a94fd563357648ac3158550409011, type: 3}
       propertyPath: _scene
       value: Scene2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4755303786910151666, guid: 547a94fd563357648ac3158550409011, type: 3}
+      propertyPath: nextAreaSpawnPoint
+      value: Stage1-2
       objectReference: {fileID: 0}
     - target: {fileID: 8298924099580087952, guid: 547a94fd563357648ac3158550409011, type: 3}
       propertyPath: m_RootOrder
@@ -272,6 +280,42 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &556404648
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 556404649}
+  m_Layer: 0
+  m_Name: NextAreaSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &556404649
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 556404648}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 579964450}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &579964450 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8298924099580087952, guid: 547a94fd563357648ac3158550409011, type: 3}
+  m_PrefabInstance: {fileID: 96069498}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1344708095
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,6 +326,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1344708097}
   - component: {fileID: 1344708096}
+  - component: {fileID: 1344708098}
   m_Layer: 0
   m_Name: BG
   m_TagString: Untagged
@@ -356,6 +401,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1344708098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344708095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57c008f954fe54a8bb972de1018a2cb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RootBone: {fileID: 0}
+  m_BoneTransforms: []
+  m_Bounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  m_UseBatching: 1
+  m_AlwaysUpdate: 1
+  m_AutoRebind: 0
 --- !u!1 &1947420316
 GameObject:
   m_ObjectHideFlags: 0
@@ -494,6 +559,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 165f91f7a4fb01f459d587bf7d95b0ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextAreaSpawnPoint: 
   moveSpeed: 5
 --- !u!114 &1947420322
 MonoBehaviour:

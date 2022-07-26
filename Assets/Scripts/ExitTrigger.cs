@@ -1,15 +1,17 @@
+using System;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class ExitTrigger : MonoBehaviour {
 
-	public string _scene;
+	public string scene;
+	public string nextAreaSpawnPoint;
 
 	private void OnTriggerEnter2D(Collider2D other) {
-		
-		Debug.Log("trigger!!!");
 		if (other.CompareTag("Player")) {
-			SceneManager.LoadScene(_scene, LoadSceneMode.Single);
+			PlayerController.Instance.nextAreaSpawnPoint = nextAreaSpawnPoint;
+			SceneManager.LoadScene(scene, LoadSceneMode.Single);
 		}
 	}
 }
