@@ -26,6 +26,11 @@ public class PlayerController : MonoBehaviour {
 		_moveInput = value.Get<Vector2>();
 	}
 
+	void OnFire() {
+		Debug.Log("Woosh woosh");
+		//_animator.SetTrigger("isAttacking");
+	}
+
 	private void UpdateWalkingAnimation() {
 		_animator.SetFloat("Horizontal", _moveInput.x);
 		_animator.SetFloat("Vertical", _moveInput.y);
