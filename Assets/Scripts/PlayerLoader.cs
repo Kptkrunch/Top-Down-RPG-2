@@ -7,6 +7,7 @@ public class PlayerLoader : MonoBehaviour {
 		if (!PlayerController.Instance) {
 			Instantiate(player);
 		}
+
 	}
 }
 
