@@ -5,7 +5,7 @@ public class CameraController : MonoBehaviour {
 
 	public Transform target;
 	void Start() {
-		target = PlayerController.Instance.transform;
+		target = FindObjectOfType<PlayerController>().transform;
 	}
 
 	private void LateUpdate() {

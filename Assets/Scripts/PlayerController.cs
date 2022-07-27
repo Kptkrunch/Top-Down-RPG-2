@@ -48,8 +48,7 @@ public class PlayerController : MonoBehaviour {
 	private void PersistPlayer() {
 		if (!Instance) {
 			Instance = this;
-		}
-		else {
+		} else if (Instance != this) {
 			Destroy(gameObject);
 		}
 	}

@@ -11,9 +11,10 @@ public class UIFade : MonoBehaviour {
 
 	private void Start() {
 
-		Instance = this;
+		PersistObject();
 		
 		DontDestroyOnLoad(gameObject);
+
 	}
 
 	private void Update() {
@@ -43,6 +44,14 @@ public class UIFade : MonoBehaviour {
 	public void FadeFromBlack() {
 		fadeFromBlack = true;
 		fadeToBlack = false;
+	}
+	
+	private void PersistObject() {
+		if (!Instance) {
+			Instance = this;
+		} else if (Instance != this) {
+			Destroy(gameObject);
+		}
 	}
 }
 
