@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
-public class UIFade : MonoBehaviour {
 
+public class UIFade : MonoBehaviour {
 	public static UIFade Instance;
 
 	public Image fadeScreen;
@@ -45,7 +45,7 @@ public class UIFade : MonoBehaviour {
 		fadeFromBlack = true;
 		fadeToBlack = false;
 	}
-	
+
 	private void PersistObject() {
 		if (!Instance) {
 			Instance = this;

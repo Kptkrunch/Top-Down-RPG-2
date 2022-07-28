@@ -1,9 +1,8 @@
-using System;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour {
-
 	public Transform target;
+
 	void Start() {
 		target = FindObjectOfType<PlayerController>().transform;
 	}

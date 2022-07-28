@@ -6,8 +6,11 @@ public class DialogueActivator : MonoBehaviour {
 	public string[] lines;
 	public string npcName;
 	public bool canActivate;
+	public bool isPerson = true;
+	
 	private void Update() {
 		if (canActivate && Keyboard.current.spaceKey.wasPressedThisFrame && !DialogueManager.Instance.dialogueBox.activeInHierarchy) {
+			DialogueManager.Instance.isPerson = isPerson;
 			DialogueManager.Instance.ShowDialogue(lines, name);
 		}
 	}

@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 public class DialogueManager : MonoBehaviour {
 	
@@ -14,6 +15,8 @@ public class DialogueManager : MonoBehaviour {
 
 	public static DialogueManager Instance;
 	private bool _justStartedTalking;
+	public bool isPerson;
+	
 	private void Start() {
 		PersistDialogueManager();
 	}
@@ -63,7 +66,7 @@ public class DialogueManager : MonoBehaviour {
 		nameText.text = npcName;
 		
 		dialogueBox.SetActive(true);
-		nameBox.SetActive(true);
+		nameBox.SetActive(isPerson);
 	}
 	
 	
