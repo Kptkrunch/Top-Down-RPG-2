@@ -43,8 +43,14 @@ public class CharacterStats : MonoBehaviour {
 		currentExp += expToAdd;
 
 		if (currentExp > expToLevel[characterLevel + 1]) {
-			print($"Congrats!!! you hit level: {characterLevel + 1}");
 			characterLevel++;
+
+			int attackIncrease = Random.Range(1, 3);
+			int defenseIncrease = Random.Range(0, 2);
+			attackPower += attackIncrease;
+			defense += defenseIncrease;
+			
+			print($"Congrats!!! you hit level: {characterLevel}, AttackPower has risen by {attackIncrease}, Defense has risen by {defenseIncrease}");
 			currentExp = 0;
 		}
 	}
