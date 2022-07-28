@@ -35,7 +35,6 @@ public class PlayerController : MonoBehaviour {
 
 	void OnFire() {
 		Debug.Log("Woosh woosh");
-
 	}
 
 	private void UpdateWalkingAnimation() {
