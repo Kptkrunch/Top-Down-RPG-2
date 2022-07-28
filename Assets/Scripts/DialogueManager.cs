@@ -10,11 +10,10 @@ public class DialogueManager : MonoBehaviour {
 	public TextMeshProUGUI nameText;
 
 	public string[] dialogueLines;
-	public int currentLine = 0;
+	public int currentLine;
 
 	public static DialogueManager Instance;
 	private bool _justStartedTalking;
-
 	private void Start() {
 		PersistDialogueManager();
 	}
