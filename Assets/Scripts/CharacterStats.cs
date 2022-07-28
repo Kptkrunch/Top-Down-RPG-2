@@ -50,7 +50,7 @@ public class CharacterStats : MonoBehaviour {
 			attackPower += attackIncrease;
 			defense += defenseIncrease;
 			
-			print($"Congrats!!! you hit level: {characterLevel}, AttackPower has risen by {attackIncrease}, Defense has risen by {defenseIncrease}");
+			print($"Congrats!!! You've been promoted to level: {characterLevel}, AttackPower has risen by {attackIncrease}, Defense has risen by {defenseIncrease}");
 			currentExp = 0;
 		}
 	}
