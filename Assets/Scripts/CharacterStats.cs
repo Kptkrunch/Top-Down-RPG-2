@@ -6,7 +6,7 @@ public class CharacterStats : MonoBehaviour {
 
 	public string characterName;
 	public int characterLevel = 1;
-	public int currentExp = 0;
+	public int currentExp;
 	public int[] expToLevel;
 	public int maxLevel = 100;
 	public int baseExp = 100;
@@ -29,7 +29,7 @@ public class CharacterStats : MonoBehaviour {
 	}
 
 	private void Update() {
-		if (Keyboard.current.tKey.wasPressedThisFrame) {
+		if (Keyboard.current.tKey.wasReleasedThisFrame) {
 			AddExp(100);
 		}
 	}
@@ -37,7 +37,7 @@ public class CharacterStats : MonoBehaviour {
 	public void AddExp(int expToAdd) {
 		currentExp += expToAdd;
 
-		if (currentExp > expToLevel[characterLevel + 1]) {
+		if (currentExp > expToLevel[characterLevel +1]) {
 			characterLevel++;
 
 			int attackIncrease = Random.Range(1, 3);
@@ -55,7 +55,7 @@ public class CharacterStats : MonoBehaviour {
 		expToLevel[1] = baseExp;
 
 		for (int i = 2; i < expToLevel.Length; i++) {
-			expToLevel[i] = (int)Mathf.FloorToInt(expToLevel[i - 1] * multiplier);
+			expToLevel[i] = Mathf.FloorToInt(expToLevel[i - 1] * multiplier);
 		}
 	}
 }

@@ -1,5 +1,65 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6211693307415085025
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6071528014124986943}
+  - component: {fileID: 680350100621654711}
+  m_Layer: 0
+  m_Name: Player4Stats
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6071528014124986943
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6211693307415085025}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -15.120211, y: 6.908519, z: 0.19753192}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8865446772019658250}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &680350100621654711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6211693307415085025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f69e382d5026ad4b93e6cf3ad82e7df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterName: TestCharacter
+  characterLevel: 3
+  currentExp: 100
+  expToLevel: 
+  maxLevel: 100
+  baseExp: 0
+  increaseMultiplier: 1.1
+  currentHp: 90
+  maxHp: 100
+  currentMana: 50
+  maxMana: 50
+  attackPower: 12
+  defense: 8
+  equippedWeapon: 
+  equippedArmor: 
+  characterImage: {fileID: 21300000, guid: e0ddba6d3fcf21f49949fcc95c849aac, type: 3}
 --- !u!1 &8865446771923688255
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,6 +152,7 @@ Transform:
   - {fileID: 8865446771923688248}
   - {fileID: 8865446772982967354}
   - {fileID: 8865446773111305629}
+  - {fileID: 6071528014124986943}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
