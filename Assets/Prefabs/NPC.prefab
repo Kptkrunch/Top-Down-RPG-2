@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 1838080599
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1973461751, guid: fb8cc55af4b7a034584793949fd90500, type: 3}
+  m_Sprite: {fileID: -946282328, guid: 42991d1e550b6b54fb16ce5446d5e5c5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -105,6 +105,7 @@ MonoBehaviour:
   - You better not go in there unless you have a death wish!
   npcName: Sue
   canActivate: 0
+  isPerson: 1
 --- !u!61 &8767623255830695531
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -122,7 +123,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.3333334, y: 1.4166666}
+    oldSize: {x: 0.7083333, y: 1.2083334}
     newSize: {x: 1, y: 1.0625}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -148,7 +149,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.3333334, y: 1.4166666}
+    oldSize: {x: 0.7083333, y: 1.2083334}
     newSize: {x: 1, y: 1.0625}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

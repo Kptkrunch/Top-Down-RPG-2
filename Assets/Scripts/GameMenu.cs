@@ -18,7 +18,6 @@ public class GameMenu : MonoBehaviour {
 	public TextMeshProUGUI[] nameStatus;
 	public TextMeshProUGUI hpStatus, mpStatus, expStatus, nextExpStatus, lvlStatus, attStatus, defStatus;
 	public Image imageStatus;
-	
 
 	private void Update() {
 		OpenCloseMenu();
@@ -30,6 +29,7 @@ public class GameMenu : MonoBehaviour {
 		if (Keyboard.current.tabKey.wasPressedThisFrame) {
 			if (!theMenu.activeInHierarchy) {
 				UpdateMainStats();
+				UpdateStatsScreen(0);
 				theMenu.SetActive(true);
 				GameManager.Instance.gameMenuOpen = true;
 			} else {
@@ -74,7 +74,7 @@ public class GameMenu : MonoBehaviour {
 				mpStatus.text = $"MP: {_playerStats[i].currentMana}/{_playerStats[i].maxMana}";
 				expStatus.text = $"EXP: {_playerStats[i].currentExp}";
 				nextExpStatus.text = $"NEXT: {_playerStats[i].expToLevel}";
-				
+				lvlStatus.text = $"Lvl: {_playerStats[i].characterLevel}";
 				attStatus.text = $"ATT: {_playerStats[i].attackPower}";
 				defStatus.text = $"DEF: {_playerStats[i].defense}";
 				imageStatus.sprite = _playerStats[i].characterImage;

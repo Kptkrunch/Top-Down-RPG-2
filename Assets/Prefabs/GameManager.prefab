@@ -44,22 +44,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f69e382d5026ad4b93e6cf3ad82e7df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: TestCharacter
-  characterLevel: 3
-  currentExp: 100
+  characterName: Steve
+  characterLevel: 1
+  currentExp: 50
   expToLevel: 
   maxLevel: 100
-  baseExp: 0
+  baseExp: 100
   increaseMultiplier: 1.1
-  currentHp: 90
-  maxHp: 100
-  currentMana: 50
-  maxMana: 50
-  attackPower: 12
-  defense: 8
+  currentHp: 75
+  maxHp: 75
+  currentMana: 150
+  maxMana: 160
+  attackPower: 17
+  defense: 2
   equippedWeapon: 
   equippedArmor: 
-  characterImage: {fileID: 21300000, guid: e0ddba6d3fcf21f49949fcc95c849aac, type: 3}
+  characterImage: {fileID: 36672321, guid: 42991d1e550b6b54fb16ce5446d5e5c5, type: 3}
 --- !u!1 &8865446771923688255
 GameObject:
   m_ObjectHideFlags: 0
@@ -106,20 +106,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Bob
   characterLevel: 1
-  currentExp: 100
+  currentExp: 0
   expToLevel: 
   maxLevel: 100
   baseExp: 100
-  increaseMultiplier: 1.15
-  currentHp: 100
-  maxHp: 100
-  currentMana: 100
-  maxMana: 100
+  increaseMultiplier: 1.1
+  currentHp: 85
+  maxHp: 110
+  currentMana: 40
+  maxMana: 45
   attackPower: 10
   defense: 10
   equippedWeapon: 
   equippedArmor: 
-  characterImage: {fileID: -1060614102, guid: fa0ade77043f6b04c887ce411018c034, type: 3}
+  characterImage: {fileID: -940284557, guid: 42991d1e550b6b54fb16ce5446d5e5c5, type: 3}
 --- !u!1 &8865446772019658248
 GameObject:
   m_ObjectHideFlags: 0
@@ -172,6 +172,7 @@ MonoBehaviour:
   - {fileID: 8865446771923688249}
   - {fileID: 8865446772982967355}
   - {fileID: 8865446773111305630}
+  - {fileID: 680350100621654711}
   gameMenuOpen: 0
   dialogueActive: 0
   fadingInBetweenAreas: 0
@@ -221,20 +222,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: George
   characterLevel: 3
-  currentExp: 100
+  currentExp: 0
   expToLevel: 
   maxLevel: 100
-  baseExp: 0
+  baseExp: 100
   increaseMultiplier: 1.1
   currentHp: 90
-  maxHp: 100
+  maxHp: 90
   currentMana: 50
   maxMana: 50
   attackPower: 12
   defense: 8
   equippedWeapon: 
   equippedArmor: 
-  characterImage: {fileID: 21300000, guid: e0ddba6d3fcf21f49949fcc95c849aac, type: 3}
+  characterImage: {fileID: -542455922, guid: 42991d1e550b6b54fb16ce5446d5e5c5, type: 3}
 --- !u!1 &8865446773111305628
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,7 +252,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8865446773111305629
 Transform:
   m_ObjectHideFlags: 0
@@ -279,19 +280,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f69e382d5026ad4b93e6cf3ad82e7df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: TestCharacter
-  characterLevel: 3
-  currentExp: 100
+  characterName: Sally
+  characterLevel: 2
+  currentExp: 35
   expToLevel: 
   maxLevel: 100
-  baseExp: 0
+  baseExp: 100
   increaseMultiplier: 1.1
-  currentHp: 90
-  maxHp: 100
-  currentMana: 50
-  maxMana: 50
-  attackPower: 12
-  defense: 8
+  currentHp: 150
+  maxHp: 150
+  currentMana: 10
+  maxMana: 10
+  attackPower: 11
+  defense: 13
   equippedWeapon: 
   equippedArmor: 
-  characterImage: {fileID: 21300000, guid: e0ddba6d3fcf21f49949fcc95c849aac, type: 3}
+  characterImage: {fileID: -1670268655, guid: 42991d1e550b6b54fb16ce5446d5e5c5, type: 3}

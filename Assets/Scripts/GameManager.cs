@@ -20,7 +20,6 @@ public class GameManager : MonoBehaviour {
 			PlayerController.Instance.canMove = true;
 		}
 	}
-
 	private void PersistGameManager() {
 		if (!Instance) {
 			Instance = this;
