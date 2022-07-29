@@ -38864,7 +38864,52 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 1148637363140035428, guid: c7b8601912d545c4f975f4f816d6cdbb, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1484859779, guid: 57b68ed929af85b4f973244c8e3f928e, type: 3}
+    - target: {fileID: 1835929614580204897, guid: c7b8601912d545c4f975f4f816d6cdbb, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -949.4241
+      objectReference: {fileID: 0}
+    - target: {fileID: 1835929614580204897, guid: c7b8601912d545c4f975f4f816d6cdbb, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 723.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 1835929614580204897, guid: c7b8601912d545c4f975f4f816d6cdbb, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -172
+      objectReference: {fileID: 0}
+    - target: {fileID: 3130495188092898833, guid: c7b8601912d545c4f975f4f816d6cdbb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6276916961924662903, guid: c7b8601912d545c4f975f4f816d6cdbb, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1484859779, guid: 57b68ed929af85b4f973244c8e3f928e, type: 3}
+    - target: {fileID: 7701843176251900809, guid: c7b8601912d545c4f975f4f816d6cdbb, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -162.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 7701843176251900809, guid: c7b8601912d545c4f975f4f816d6cdbb, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -837.8922
+      objectReference: {fileID: 0}
+    - target: {fileID: 7701843176251900809, guid: c7b8601912d545c4f975f4f816d6cdbb, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7701843176251900809, guid: c7b8601912d545c4f975f4f816d6cdbb, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -373
+      objectReference: {fileID: 0}
+    - target: {fileID: 7858015591646979397, guid: c7b8601912d545c4f975f4f816d6cdbb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1924146565, guid: c7b8601912d545c4f975f4f816d6cdbb, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c7b8601912d545c4f975f4f816d6cdbb, type: 3}
 --- !u!1 &1924146555 stripped
 GameObject:
