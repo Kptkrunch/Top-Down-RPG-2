@@ -50,6 +50,7 @@ MonoBehaviour:
   expToLevel: 
   maxLevel: 100
   baseExp: 100
+  increaseMultiplier: 1.15
   currentHp: 100
   maxHp: 100
   currentMana: 100
@@ -110,6 +111,9 @@ MonoBehaviour:
   - {fileID: 8865446771923688249}
   - {fileID: 8865446772982967355}
   - {fileID: 8865446773111305630}
+  gameMenuOpen: 0
+  dialogueActive: 0
+  fadingInBetweenAreas: 0
 --- !u!1 &8865446772982967353
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,6 +164,7 @@ MonoBehaviour:
   expToLevel: 
   maxLevel: 100
   baseExp: 0
+  increaseMultiplier: 1.1
   currentHp: 90
   maxHp: 100
   currentMana: 50
@@ -219,6 +224,7 @@ MonoBehaviour:
   expToLevel: 
   maxLevel: 100
   baseExp: 0
+  increaseMultiplier: 1.1
   currentHp: 90
   maxHp: 100
   currentMana: 50

@@ -100,12 +100,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lines:
-  - Hi my name is Suzy, but you can call me Sue.
-  - I hear there are monsters in the cave behind my house.
-  - You better not go in there unless you have a death wish!
-  npcName: 
+  - Vegatables $1
+  npcName: Sign
   canActivate: 0
-  isPerson: 0
 --- !u!61 &8767623255830695531
 BoxCollider2D:
   m_ObjectHideFlags: 0

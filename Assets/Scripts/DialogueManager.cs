@@ -1,7 +1,6 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.InputSystem;
-using UnityEngine.Serialization;
 
 public class DialogueManager : MonoBehaviour {
 	
@@ -11,7 +10,7 @@ public class DialogueManager : MonoBehaviour {
 	public TextMeshProUGUI nameText;
 
 	public string[] dialogueLines;
-	public int currentLine;
+	public int currentLine = 0;
 
 	public static DialogueManager Instance;
 	private bool _justStartedTalking;
@@ -28,9 +27,7 @@ public class DialogueManager : MonoBehaviour {
 	private void PersistDialogueManager() {
 		if (!Instance) {
 			Instance = this;
-		} else if (Instance != this) {
-			Destroy(gameObject);
-		}
+		} 
 	}
 
 	private void UpdateToNextLine() {
@@ -39,34 +36,39 @@ public class DialogueManager : MonoBehaviour {
 			if (Keyboard.current.spaceKey.wasReleasedThisFrame) {
 				if (_justStartedTalking == false) {
 					currentLine++;
-					Debug.Log($"currentLine: {currentLine}");
+					Debug.Log($"dialogue Lines length {dialogueLines.Length}, and this is the array {dialogueLines}");
+					
 					if (currentLine >= dialogueLines.Length) {
+						Debug.Log($"dialogue Lines length {dialogueLines.Length}, and this is the array {dialogueLines}");
+
 						dialogueBox.SetActive(false);
 						nameBox.SetActive(false);
-					}
-					else {
+						GameManager.Instance.dialogueActive = false;
+					} else {
 						dialogueText.text = dialogueLines[currentLine];
 					}
-				}
-				else {
+				} else {
 					_justStartedTalking = false;
 				}
 			}
-		}
-		else {
+		} else {
 			_justStartedTalking = true;
 		}
 	}
 
 	public void ShowDialogue(string[] newLines, string npcName) {
+		Debug.Log($"show diag was called");
+
 		dialogueLines = newLines;
 		currentLine = 0;
 
-		dialogueText.text = dialogueLines[0];
+		dialogueText.text = dialogueLines[currentLine];
 		nameText.text = npcName;
 		
 		dialogueBox.SetActive(true);
 		nameBox.SetActive(isPerson);
+
+		GameManager.Instance.dialogueActive = true;
 	}
 	
 	

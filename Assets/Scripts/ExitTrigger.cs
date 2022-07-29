@@ -15,6 +15,7 @@ public class ExitTrigger : MonoBehaviour {
 			waitToLoad -= Time.deltaTime;
 			
 			if (waitToLoad <= 0) {
+				GameManager.Instance.fadingInBetweenAreas = false;
 				shouldLoadAfterFade = false;
 				SceneManager.LoadScene(sceneToLoad, LoadSceneMode.Single);
 			}
@@ -24,8 +25,8 @@ public class ExitTrigger : MonoBehaviour {
 	private void OnTriggerEnter2D(Collider2D other) {
 		
 		if (other.CompareTag("Player")) {
-
 			shouldLoadAfterFade = true;
+			GameManager.Instance.fadingInBetweenAreas = true;
 			UIFade.Instance.FadeToBlack();
 			PlayerController.Instance.spawnLocationName = nextLocationSpawnPoint;
 		}

@@ -5,13 +5,14 @@ public class DialogueActivator : MonoBehaviour {
 
 	public string[] lines;
 	public string npcName;
-	public bool canActivate;
-	public bool isPerson = true;
+	public bool canActivate, isPerson;
 	
 	private void Update() {
 		if (canActivate && Keyboard.current.spaceKey.wasPressedThisFrame && !DialogueManager.Instance.dialogueBox.activeInHierarchy) {
+			
+			Debug.Log($"space was pressed");
 			DialogueManager.Instance.isPerson = isPerson;
-			DialogueManager.Instance.ShowDialogue(lines, name);
+			DialogueManager.Instance.ShowDialogue(lines, npcName);
 		}
 	}
 

@@ -7,9 +7,11 @@ public class PlayerController : MonoBehaviour {
 	private Animator _animator;
 	private Vector2 _moveInput;
 	private bool _isMoving;
+	
 
 	public static PlayerController Instance;
 	public string spawnLocationName;
+	public bool canMove;
 	
 	[SerializeField, Range(0f, 100f)] private float moveSpeed = 5f;
 	void Awake() {
@@ -30,7 +32,13 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void OnMove(InputValue value) {
-		_moveInput = value.Get<Vector2>();
+		if (canMove) {
+			_moveInput = value.Get<Vector2>();
+		}
+
+		if (!canMove) {
+			_moveInput = new Vector2(0, 0);
+		}
 	}
 
 	void OnFire() {

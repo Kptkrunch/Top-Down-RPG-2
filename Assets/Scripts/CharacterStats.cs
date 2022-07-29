@@ -10,6 +10,7 @@ public class CharacterStats : MonoBehaviour {
 	public int[] expToLevel;
 	public int maxLevel = 100;
 	public int baseExp = 100;
+	[SerializeField, Range(1, 2)] private float increaseMultiplier = 1.1f;
 
 	public int currentHp;
 	public int maxHp = 100;
@@ -24,13 +25,7 @@ public class CharacterStats : MonoBehaviour {
 	public Sprite characterImage;
 
 	private void Start() {
-		expToLevel = new int[maxLevel];
-		expToLevel[1] = baseExp;
-
-		for (int i = 2; i < expToLevel.Length; i++) {
-			expToLevel[i] = (int)Mathf.FloorToInt(expToLevel[i - 1] * 1.1f);
-			
-		}
+		PopulateExpGoals(increaseMultiplier);
 	}
 
 	private void Update() {
@@ -52,6 +47,15 @@ public class CharacterStats : MonoBehaviour {
 			
 			print($"Congrats!!! You've been promoted to level: {characterLevel}, AttackPower has risen by {attackIncrease}, Defense has risen by {defenseIncrease}");
 			currentExp = 0;
+		}
+	}
+
+	private void PopulateExpGoals(float multiplier) {
+		expToLevel = new int[maxLevel];
+		expToLevel[1] = baseExp;
+
+		for (int i = 2; i < expToLevel.Length; i++) {
+			expToLevel[i] = (int)Mathf.FloorToInt(expToLevel[i - 1] * multiplier);
 		}
 	}
 }
