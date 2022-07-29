@@ -34,7 +34,7 @@ public class CharacterStats : MonoBehaviour {
 		}
 	}
 
-	public void AddExp(int expToAdd) {
+	private void AddExp(int expToAdd) {
 		currentExp += expToAdd;
 
 		if (currentExp > expToLevel[characterLevel +1]) {
@@ -51,6 +51,7 @@ public class CharacterStats : MonoBehaviour {
 	}
 
 	private void PopulateExpGoals(float multiplier) {
+		print("exp goals populated");
 		expToLevel = new int[maxLevel];
 		expToLevel[1] = baseExp;
 

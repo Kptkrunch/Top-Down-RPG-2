@@ -8,7 +8,7 @@ public class GameMenu : MonoBehaviour {
 
 	public GameObject theMenu;
 	private CharacterStats[] _playerStats;
-	public TextMeshProUGUI[] nameTextArray, hpTextArray, mpTextArray, expTextArray, lvlTextArray;
+	public TextMeshProUGUI[] nameTextArray, hpTextArray, mpTextArray, expTextArray, lvlTextArray, attTextArray, defTextArray;
 	public Slider[] expBarSliders;
 	public Image[] characterImage;
 	public GameObject[] characterStatHolder;
@@ -20,10 +20,9 @@ public class GameMenu : MonoBehaviour {
 
 	private void OpenCloseMenu() {
 		if (Keyboard.current.tabKey.wasPressedThisFrame) {
-
 			if (!theMenu.activeInHierarchy) {
-				theMenu.SetActive(true);
 				UpdateMainStats();
+				theMenu.SetActive(true);
 				GameManager.Instance.dialogueActive = true;
 			} else {
 				theMenu.SetActive(false);
@@ -39,6 +38,17 @@ public class GameMenu : MonoBehaviour {
 
 			if (_playerStats[i].gameObject.activeInHierarchy) {
 				characterStatHolder[i].SetActive(true);
+
+				nameTextArray[i].text = _playerStats[i].characterName;
+				hpTextArray[i].text = $"HP: {_playerStats[i].currentHp}/{_playerStats[i].maxHp}";
+				mpTextArray[i].text = $"MP: {_playerStats[i].currentMana}/{_playerStats[i].maxMana}";
+				attTextArray[i].text = $"Att: {_playerStats[i].attackPower}";
+				defTextArray[i].text = $"Def: {_playerStats[i].defense}";
+				lvlTextArray[i].text = $"Lvl: {_playerStats[i].characterLevel}";
+				expTextArray[i].text = $"{_playerStats[i].currentExp}/{_playerStats[i].expToLevel[_playerStats[i].characterLevel]}";
+				expBarSliders[i].maxValue = _playerStats[i].expToLevel[_playerStats[i].characterLevel];
+				expBarSliders[i].value = _playerStats[i].currentExp;
+				characterImage[i].sprite = _playerStats[i].characterImage;
 			} else {
 				characterStatHolder[i].SetActive(false);
 			}
