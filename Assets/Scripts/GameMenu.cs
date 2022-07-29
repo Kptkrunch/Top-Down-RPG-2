@@ -1,21 +1,29 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class GameMenu : MonoBehaviour {
 
 	public GameObject theMenu;
+	public GameObject[] menuWindows;
+	// main menu stats
 	private CharacterStats[] _playerStats;
 	public TextMeshProUGUI[] nameTextArray, hpTextArray, mpTextArray, expTextArray, lvlTextArray, attTextArray, defTextArray;
 	public Slider[] expBarSliders;
 	public Image[] characterImage;
 	public GameObject[] characterStatHolder;
 	
+	// status menu stats
+	public TextMeshProUGUI[] nameStatus;
+	public TextMeshProUGUI hpStatus, mpStatus, expStatus, nextExpStatus, lvlStatus, attStatus, defStatus;
+	public Image imageStatus;
+	
 
 	private void Update() {
 		OpenCloseMenu();
+		UpdateTabs();
+		
 	}
 
 	private void OpenCloseMenu() {
@@ -23,10 +31,10 @@ public class GameMenu : MonoBehaviour {
 			if (!theMenu.activeInHierarchy) {
 				UpdateMainStats();
 				theMenu.SetActive(true);
-				GameManager.Instance.dialogueActive = true;
+				GameManager.Instance.gameMenuOpen = true;
 			} else {
 				theMenu.SetActive(false);
-				GameManager.Instance.dialogueActive = false;
+				GameManager.Instance.gameMenuOpen = false;
 			}
 		}
 	}
@@ -54,6 +62,53 @@ public class GameMenu : MonoBehaviour {
 			}
 		}
 		
+	}
+
+
+	public void UpdateStatsScreen(int characterSelected) {
+
+		for (int i = 0; i < _playerStats.Length; i++) {
+
+			if (i == characterSelected) {
+				hpStatus.text = $"HP: {_playerStats[i].currentHp}/{_playerStats[i].maxHp}";
+				mpStatus.text = $"MP: {_playerStats[i].currentMana}/{_playerStats[i].maxMana}";
+				expStatus.text = $"EXP: {_playerStats[i].currentExp}";
+				nextExpStatus.text = $"NEXT: {_playerStats[i].expToLevel}";
+				
+				attStatus.text = $"ATT: {_playerStats[i].attackPower}";
+				defStatus.text = $"DEF: {_playerStats[i].defense}";
+				imageStatus.sprite = _playerStats[i].characterImage;
+			}
+		}
+	}
+	public void ToggleWindow(int windowNumber) {
+		print("toggle window called");
+		for (int i = 0; i < menuWindows.Length; i++) {
+
+			if (i == windowNumber) {
+				menuWindows[i].SetActive(!menuWindows[i].activeInHierarchy);
+			} else {
+				menuWindows[i].SetActive(false);
+			}
+		}
+	}
+
+	public void CloseMenu() {
+
+		for (int i = 0; i < menuWindows.Length; i++) {
+			menuWindows[i].SetActive(false);
+		}
+		
+		theMenu.SetActive(false);
+
+		GameManager.Instance.gameMenuOpen = false;
+	}
+
+	public void UpdateTabs() {
+		_playerStats = GameManager.Instance.playerStats;
+		for (int i = 0; i < _playerStats.Length; i++) {
+			nameStatus[i].text = _playerStats[i].characterName;
+		}
 	}
 }
 

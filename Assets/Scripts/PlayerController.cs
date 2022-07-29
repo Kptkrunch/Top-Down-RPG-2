@@ -41,10 +41,6 @@ public class PlayerController : MonoBehaviour {
 		}
 	}
 
-	void OnFire() {
-		Debug.Log("Woosh woosh");
-	}
-
 	private void UpdateWalkingAnimation() {
 		_animator.SetFloat("Horizontal", _moveInput.x);
 		_animator.SetFloat("Vertical", _moveInput.y);
