@@ -20,7 +20,7 @@ TagManager:
   - Player
   - NPC
   - 
-  - 
+  - Items
   - 
   - 
   - 
@@ -45,8 +45,20 @@ TagManager:
   - name: Background
     uniqueID: 871958581
     locked: 0
+  - name: Enemies
+    uniqueID: 65276563
+    locked: 0
   - name: Player
     uniqueID: 1838080599
+    locked: 0
+  - name: Midground
+    uniqueID: 2134086979
+    locked: 0
+  - name: Foreground
+    uniqueID: 3697625749
+    locked: 0
+  - name: Items
+    uniqueID: 1180665793
     locked: 0
   - name: UI
     uniqueID: 3043030569

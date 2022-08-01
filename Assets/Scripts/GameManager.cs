@@ -5,6 +5,9 @@ public class GameManager : MonoBehaviour {
 	public static GameManager Instance;
 	public CharacterStats[] playerStats;
 	public bool gameMenuOpen, dialogueActive, fadingInBetweenAreas;
+	public string[] itemsHeld;
+	public int[] itemQuantity;
+	public Item[] referenceItems;
 	
 	private void Start() {
 		PersistGameManager();
@@ -12,7 +15,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	private void Update() {
-		
+
 		if (gameMenuOpen || dialogueActive || fadingInBetweenAreas) {
 			PlayerController.Instance.canMove = false;
 		}
@@ -27,5 +30,79 @@ public class GameManager : MonoBehaviour {
 			Destroy(gameObject);
 		}
 	}
+
+	public Item GetItemDetails(string itemName) {
+
+		for (int i = 0; i < referenceItems.Length; i++) {
+
+			if (referenceItems[i].itemName == itemName) {
+				return referenceItems[i];
+			}
+		}
+		return null;
+	}
+
+	public void SortItems() {
+		var itemAfterSpace = true;
+
+		while (itemAfterSpace) {
+
+			itemAfterSpace = false;
+			for (int i = 0; i < itemsHeld.Length - 1; i++) {
+				if (itemsHeld[i] == "") {
+				
+					itemsHeld[i] = itemsHeld[i + 1];
+					itemsHeld[i + 1] = "";
+					
+					itemQuantity[i] = itemQuantity[i + 1];
+					itemQuantity[i + 1] = 0;
+
+					if (itemsHeld[i] != "") {
+						itemAfterSpace = true;
+					}
+				}
+			}
+		}
+
+
+	}
+
+	public void AddItem(string itemToAdd) {
+		bool foundItemSlot = false;
+		int foundSlotIndex = 0;
+		
+		for (int i = 0; i < itemsHeld.Length; i++) {
+			if (itemsHeld[i] == "" || itemsHeld[i] == itemToAdd) {
+				foundSlotIndex = i;
+				i = itemsHeld.Length;
+				foundItemSlot = true;
+			}
+		}
+		
+		if (foundItemSlot) {
+				
+			bool itemExists = false;
+			for (int i = 0; i < referenceItems.Length; i++) {
+					
+				if (referenceItems[i].itemName == itemToAdd) {
+					itemExists = true;
+					i = referenceItems.Length;
+				}
+			}
+
+			if (itemExists) {
+				itemsHeld[foundSlotIndex] = itemToAdd;
+				itemQuantity[foundSlotIndex]++;
+			} else {
+				Debug.Log($"{itemToAdd} doesn't exits");
+			}
+			GameMenu.Instance.ShowItems();
+		}
+	}
+
+	public void RemoveItem(string itemToRemove) {
+		
+	}
+		
 }
 

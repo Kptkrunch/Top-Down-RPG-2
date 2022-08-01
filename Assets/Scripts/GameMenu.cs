@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
@@ -19,9 +20,24 @@ public class GameMenu : MonoBehaviour {
 	public TextMeshProUGUI hpStatus, mpStatus, expStatus, nextExpStatus, lvlStatus, attStatus, defStatus;
 	public Image imageStatus;
 
+	public ItemButton[] itemStorageArray;
+
+	public string selectedItem;
+	public Item activeItem;
+	public TextMeshProUGUI itemName, itemDescription, useButtonText; 
+	public static GameMenu Instance;
+	private void Start() {
+		Instance = this;
+	}
+
 	private void Update() {
 		OpenCloseMenu();
 		UpdateTabs();
+
+		if (Keyboard.current.gKey.wasPressedThisFrame) {
+			Debug.Log("Cherries");
+			GameManager.Instance.AddItem("Cherries");
+		}
 		
 	}
 
@@ -109,6 +125,40 @@ public class GameMenu : MonoBehaviour {
 		for (int i = 0; i < _playerStats.Length; i++) {
 			nameStatus[i].text = _playerStats[i].characterName;
 		}
+	}
+
+	public void ShowItems() {
+
+		GameManager.Instance.SortItems();
+		
+		for (int i = 0; i < itemStorageArray.Length; i++) {
+			itemStorageArray[i].buttonIndex = i;
+
+			if (GameManager.Instance.itemsHeld[i] != "") {
+				
+				itemStorageArray[i].buttonImage.gameObject.SetActive(true);
+				itemStorageArray[i].buttonImage.sprite =
+					GameManager.Instance.GetItemDetails(GameManager.Instance.itemsHeld[i]).itemSprite;
+				itemStorageArray[i].quantityText.text = GameManager.Instance.itemQuantity[i].ToString();
+			} else {
+				
+				itemStorageArray[i].buttonImage.gameObject.SetActive(false);
+				itemStorageArray[i].quantityText.text = "";
+			}
+		}
+	}
+
+	public void SelectItem(Item clickedItem) {
+
+		activeItem = clickedItem;
+		if (activeItem.isConsumable) {
+			useButtonText.text = "Use";
+		} else if (activeItem.isWeapon || activeItem.isArmor) {
+			useButtonText.text = "Equip";
+		}
+
+		itemName.text = activeItem.itemName;
+		itemDescription.text = activeItem.itemDescription;
 	}
 }
 
