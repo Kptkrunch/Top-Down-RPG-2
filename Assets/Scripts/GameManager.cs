@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour {
 
@@ -8,7 +9,7 @@ public class GameManager : MonoBehaviour {
 	public string[] itemsHeld;
 	public int[] itemQuantity;
 	public Item[] referenceItems;
-	
+	public Vector2 mousePosition;
 	private void Start() {
 		PersistGameManager();
 		DontDestroyOnLoad(gameObject);
@@ -22,7 +23,10 @@ public class GameManager : MonoBehaviour {
 		else {
 			PlayerController.Instance.canMove = true;
 		}
+		
+		GetMouseInfo();
 	}
+	
 	private void PersistGameManager() {
 		if (!Instance) {
 			Instance = this;
@@ -30,7 +34,6 @@ public class GameManager : MonoBehaviour {
 			Destroy(gameObject);
 		}
 	}
-
 	public Item GetItemDetails(string itemName) {
 
 		for (int i = 0; i < referenceItems.Length; i++) {
@@ -41,7 +44,6 @@ public class GameManager : MonoBehaviour {
 		}
 		return null;
 	}
-
 	public void SortItems() {
 		var itemAfterSpace = true;
 
@@ -66,7 +68,6 @@ public class GameManager : MonoBehaviour {
 
 
 	}
-
 	public void AddItem(string itemToAdd) {
 		bool foundItemSlot = false;
 		int foundSlotIndex = 0;
@@ -99,9 +100,41 @@ public class GameManager : MonoBehaviour {
 			GameMenu.Instance.ShowItems();
 		}
 	}
-
 	public void RemoveItem(string itemToRemove) {
 		
+		bool itemFound = false;
+		int itemPosition = 0;
+		
+		for(int i = 0; i < itemsHeld.Length; i++) {
+			if (itemsHeld[i] == itemToRemove) {
+				itemFound = true;
+				itemPosition = i;
+				i = itemsHeld.Length;
+			}
+		}
+
+		if (itemFound) {
+
+			itemQuantity[itemPosition]--;
+
+			if (itemQuantity[itemPosition] == 0) {
+				itemsHeld[itemPosition] = "";
+			} 
+			
+			GameMenu.Instance.ShowItems();
+		} else {
+			Debug.Log("Item not found");
+		}
+	}
+
+	public void GetMouseInfo() {
+		mousePosition = new Vector2(Mouse.current.position.ReadValue().x, Mouse.current.position.ReadValue().y);
+		if (Mouse.current.rightButton.wasPressedThisFrame && !GameMenu.Instance.charSelectPanel.activeInHierarchy) {
+			Debug.Log($"coords: {itemsHeld[GameMenu.Instance.activeCharacter.buttonIndex]} ");
+			GameMenu.Instance.ShowCharacterChoices();
+		} else {
+			GameMenu.Instance.charSelectPanel.SetActive(!GameMenu.Instance.charSelectPanel.activeInHierarchy);	
+		}
 	}
 		
 }

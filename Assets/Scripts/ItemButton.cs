@@ -8,10 +8,6 @@ public class ItemButton : MonoBehaviour {
 	public Image buttonImage;
 	public TextMeshProUGUI quantityText;
 	public int buttonIndex;
-	
-	void Awake() {
-		
-	}
 
 	public void Press() {
 
