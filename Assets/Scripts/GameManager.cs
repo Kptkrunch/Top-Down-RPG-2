@@ -127,14 +127,25 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
-	public void GetMouseInfo() {
-		mousePosition = new Vector2(Mouse.current.position.ReadValue().x, Mouse.current.position.ReadValue().y);
-		if (Mouse.current.rightButton.wasPressedThisFrame && !GameMenu.Instance.charSelectPanel.activeInHierarchy) {
-			Debug.Log($"coords: {itemsHeld[GameMenu.Instance.activeCharacter.buttonIndex]} ");
-			GameMenu.Instance.ShowCharacterChoices();
-		} else {
-			GameMenu.Instance.charSelectPanel.SetActive(!GameMenu.Instance.charSelectPanel.activeInHierarchy);	
+	private void GetMouseInfo() {
+
+		var wasOpened = false;
+
+		if (GameMenu.Instance.charSelectPanel != null && GameMenu.Instance.menuWindows[0].activeInHierarchy) {
+			
+			mousePosition = new Vector2(Mouse.current.position.ReadValue().x, Mouse.current.position.ReadValue().y);
+			if (Mouse.current.rightButton.wasPressedThisFrame && !GameMenu.Instance.charSelectPanel.activeInHierarchy) {
+				GameMenu.Instance.ShowCharacterChoices();
+				wasOpened = true;
+			}
+
+			if (GameMenu.Instance.charSelectPanel.activeInHierarchy &&
+			    !wasOpened &&
+			    Mouse.current.rightButton.wasPressedThisFrame) {
+				GameMenu.Instance.charSelectPanel.SetActive(false);
+			}
 		}
+
 	}
 		
 }

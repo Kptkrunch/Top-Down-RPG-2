@@ -37,7 +37,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - TopUI
   m_SortingLayers:
   - name: Default
     uniqueID: 0
@@ -62,4 +62,7 @@ TagManager:
     locked: 0
   - name: UI
     uniqueID: 3043030569
+    locked: 0
+  - name: TopUI
+    uniqueID: 4006823095
     locked: 0

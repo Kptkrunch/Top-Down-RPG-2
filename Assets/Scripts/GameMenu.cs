@@ -108,6 +108,7 @@ public class GameMenu : MonoBehaviour {
 				menuWindows[i].SetActive(!menuWindows[i].activeInHierarchy);
 			} else {
 				menuWindows[i].SetActive(false);
+				charSelectPanel.SetActive(false);
 			}
 		}
 	}
