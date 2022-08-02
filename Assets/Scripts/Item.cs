@@ -32,5 +32,44 @@ public class Item : MonoBehaviour {
 		}
 	}
 
+	public void UseOrEquip(int selectedChar) {
+		
+		Debug.Log(selectedChar);
+		CharacterStats charSelected = GameManager.Instance.playerStats[selectedChar];
+
+		if (isConsumable) {
+			if (changeHp) {
+				charSelected.currentHp += itemPotency;
+				if (charSelected.currentHp > charSelected.maxHp) {
+					charSelected.currentHp = charSelected.maxHp;
+				}
+			}
+			if (changeMp) {
+				charSelected.currentMana += itemPotency;
+				if (charSelected.currentMana > charSelected.maxMana) {
+					charSelected.currentMana = charSelected.maxMana;
+				}
+			}
+		}
+
+		if (isWeapon) {
+			if (charSelected.equippedWeapon != "") {
+				GameManager.Instance.AddItem(charSelected.equippedWeapon);
+			}
+
+			charSelected.equippedWeapon = itemName;
+			charSelected.attackPower += weaponAttack;
+		}
+		
+		if (isArmor) {
+			if (charSelected.equippedArmor != "") {
+				GameManager.Instance.AddItem(charSelected.equippedArmor);
+			}
+
+			charSelected.equippedArmor = itemName;
+			charSelected.defense += armorDefense;
+		}
+		GameMenu.Instance.DropItem();
+	}
 }
 

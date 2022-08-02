@@ -19,7 +19,7 @@ public class GameMenu : MonoBehaviour {
 	
 	[Header("Stat Menu Stats")]
 	public TextMeshProUGUI[] nameStatus;
-	public TextMeshProUGUI hpStatus, mpStatus, expStatus, nextExpStatus, lvlStatus, attStatus, defStatus;
+	public TextMeshProUGUI hpStatus, mpStatus, expStatus, nextExpStatus, lvlStatus, attStatus, defStatus, wepStatus, armStatus, wepAtt, armDef;
 	public Image imageStatus;
 
 	[Header("UI Buttons")]
@@ -85,23 +85,26 @@ public class GameMenu : MonoBehaviour {
 		
 	}
 	public void UpdateStatsScreen(int characterSelected) {
-
 		for (int i = 0; i < _playerStats.Length; i++) {
 
 			if (i == characterSelected) {
+				
 				hpStatus.text = $"HP: {_playerStats[i].currentHp}/{_playerStats[i].maxHp}";
 				mpStatus.text = $"MP: {_playerStats[i].currentMana}/{_playerStats[i].maxMana}";
-				expStatus.text = $"EXP: {_playerStats[i].currentExp}";
-				nextExpStatus.text = $"NEXT: {_playerStats[i].expToLevel}";
+				expStatus.text = $"Exp: {_playerStats[i].currentExp}";
+				nextExpStatus.text = $"Next: {_playerStats[i].expToLevel}";
 				lvlStatus.text = $"Lvl: {_playerStats[i].characterLevel}";
-				attStatus.text = $"ATT: {_playerStats[i].attackPower}";
-				defStatus.text = $"DEF: {_playerStats[i].defense}";
+				attStatus.text = $"Att: {_playerStats[i].attackPower}";
+				defStatus.text = $"Dtt: {_playerStats[i].defense}";
 				imageStatus.sprite = _playerStats[i].characterImage;
+				wepStatus.text = $"Wpn: {_playerStats[i].equippedWeapon}";
+				wepAtt.text = $"+{_playerStats[i].weaponAttPow} Att";
+				armStatus.text = $"Arm: {_playerStats[i].equippedArmor}";
+				armDef.text = $"+{_playerStats[i].armorDefPow} Def";
 			}
 		}
 	}
 	public void ToggleWindow(int windowNumber) {
-		print("toggle window called");
 		for (int i = 0; i < menuWindows.Length; i++) {
 
 			if (i == windowNumber) {
@@ -164,6 +167,7 @@ public class GameMenu : MonoBehaviour {
 		}
 		charSelectPanel.SetActive(true);
 	}
+
 	
 	public void SelectItem(Item clickedItem) {
 		
@@ -181,6 +185,19 @@ public class GameMenu : MonoBehaviour {
 	public void DropItem() {
 		if (activeItem) {
 			GameManager.Instance.RemoveItem(activeItem.itemName);
+		}
+	}
+
+	public void UseItem(int currentCharacter) {
+
+		for (int i = 0; i < GameManager.Instance.itemsHeld.Length; i++) {
+
+			if (activeItem.itemName == GameManager.Instance.itemsHeld[i]) {
+				if (GameManager.Instance.itemQuantity[i] > 0) {
+					activeItem.UseOrEquip(currentCharacter);
+
+				}
+			}
 		}
 	}
 

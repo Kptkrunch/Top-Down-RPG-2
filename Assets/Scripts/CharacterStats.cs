@@ -21,7 +21,10 @@ public class CharacterStats : MonoBehaviour {
 	public int defense;
 
 	public string equippedWeapon;
+	public int weaponAttPow;
 	public string equippedArmor;
+	public int armorDefPow;
+
 	public Sprite characterImage;
 
 	private void Start() {
@@ -29,9 +32,7 @@ public class CharacterStats : MonoBehaviour {
 	}
 
 	private void Update() {
-		if (Keyboard.current.tKey.wasReleasedThisFrame) {
-			AddExp(100);
-		}
+		PopulateWepArmValues();
 	}
 
 	private void AddExp(int expToAdd) {
@@ -47,6 +48,18 @@ public class CharacterStats : MonoBehaviour {
 			
 			print($"Congrats!!! You've been promoted to level: {characterLevel}, AttackPower has risen by {attackIncrease}, Defense has risen by {defenseIncrease}");
 			currentExp = 0;
+		}
+	}
+
+	private void PopulateWepArmValues() {
+		for (int i = 0; i < GameManager.Instance.referenceItems.Length; i++) {
+			if (equippedWeapon == GameManager.Instance.referenceItems[i].itemName) {
+				weaponAttPow = GameManager.Instance.referenceItems[i].weaponAttack;
+			}
+			
+			if (equippedArmor == GameManager.Instance.referenceItems[i].itemName) {
+				armorDefPow = GameManager.Instance.referenceItems[i].armorDefense;
+			}
 		}
 	}
 

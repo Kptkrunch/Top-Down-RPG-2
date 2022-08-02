@@ -126,7 +126,6 @@ public class GameManager : MonoBehaviour {
 			Debug.Log("Item not found");
 		}
 	}
-
 	private void GetMouseInfo() {
 
 		var wasOpened = false;

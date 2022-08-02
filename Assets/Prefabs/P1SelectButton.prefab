@@ -174,11 +174,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GameMenu, Assembly-CSharp
-        m_MethodName: SelectCharacter
-        m_Mode: 2
+        m_MethodName: UseItem
+        m_Mode: 3
         m_Arguments:
-          m_ObjectArgument: {fileID: 6731166018963244047}
-          m_ObjectArgumentAssemblyTypeName: CharacterSelectButton, Assembly-CSharp
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -240,11 +240,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1253365087816005542, guid: ac333d58a31a3304c83e5ddba3d13cbc, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1253365087816005542, guid: ac333d58a31a3304c83e5ddba3d13cbc, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1253365088271834608, guid: ac333d58a31a3304c83e5ddba3d13cbc, type: 3}
       propertyPath: m_Name
@@ -361,11 +361,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 265397072933730365, guid: 24354e9565edab742af5b4b116e9e663, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 265397072933730365, guid: 24354e9565edab742af5b4b116e9e663, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 265397072933730366, guid: 24354e9565edab742af5b4b116e9e663, type: 3}
+      propertyPath: m_Color.g
+      value: 0.78891563
       objectReference: {fileID: 0}
     - target: {fileID: 265397073724172494, guid: 24354e9565edab742af5b4b116e9e663, type: 3}
       propertyPath: m_Name
@@ -482,11 +486,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4185465831986400508, guid: dfd391cf30974414e8deb938af528042, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4185465831986400508, guid: dfd391cf30974414e8deb938af528042, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4185465833156807619, guid: dfd391cf30974414e8deb938af528042, type: 3}
       propertyPath: m_Pivot.x
