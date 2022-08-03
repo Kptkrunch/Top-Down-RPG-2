@@ -92,10 +92,10 @@ public class GameMenu : MonoBehaviour {
 				hpStatus.text = $"HP: {_playerStats[i].currentHp}/{_playerStats[i].maxHp}";
 				mpStatus.text = $"MP: {_playerStats[i].currentMana}/{_playerStats[i].maxMana}";
 				expStatus.text = $"Exp: {_playerStats[i].currentExp}";
-				nextExpStatus.text = $"Next: {_playerStats[i].expToLevel}";
+				nextExpStatus.text = $"Next: {_playerStats[i].expToLevel[_playerStats[i].characterLevel]}";
 				lvlStatus.text = $"Lvl: {_playerStats[i].characterLevel}";
 				attStatus.text = $"Att: {_playerStats[i].attackPower}";
-				defStatus.text = $"Dtt: {_playerStats[i].defense}";
+				defStatus.text = $"Def: {_playerStats[i].defense}";
 				imageStatus.sprite = _playerStats[i].characterImage;
 				wepStatus.text = $"Wpn: {_playerStats[i].equippedWeapon}";
 				wepAtt.text = $"+{_playerStats[i].weaponAttPow} Att";
@@ -109,6 +109,7 @@ public class GameMenu : MonoBehaviour {
 
 			if (i == windowNumber) {
 				menuWindows[i].SetActive(!menuWindows[i].activeInHierarchy);
+
 			} else {
 				menuWindows[i].SetActive(false);
 				charSelectPanel.SetActive(false);
@@ -154,7 +155,10 @@ public class GameMenu : MonoBehaviour {
 
 	public void ShowCharacterChoices() {
 
-		charSelectPanel.transform.position = GameManager.Instance.mousePosition;
+		if (!charSelectPanel.activeInHierarchy) {
+			charSelectPanel.transform.position = GameManager.Instance.mousePosition;
+		}
+		
 		for (int i = 0; i < characterSelectButtonArray.Length; i++) {
 			characterSelectButtonArray[i].buttonImage.sprite = _playerStats[i].characterImage;
 			characterSelectButtonArray[i].buttonIndex = i;
@@ -195,10 +199,12 @@ public class GameMenu : MonoBehaviour {
 			if (activeItem.itemName == GameManager.Instance.itemsHeld[i]) {
 				if (GameManager.Instance.itemQuantity[i] > 0) {
 					activeItem.UseOrEquip(currentCharacter);
-
+					ShowCharacterChoices();
 				}
 			}
 		}
+		UpdateStatsScreen(currentCharacter);
+		UpdateMainStats();
 	}
 
 	public void AddRemoveItemTest() {

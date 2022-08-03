@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 6731166018963244047}
   - component: {fileID: 1663545015}
   m_Layer: 5
-  m_Name: P1SelectButton
+  m_Name: PlayerSelectButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
