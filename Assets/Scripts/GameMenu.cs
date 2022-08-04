@@ -7,8 +7,10 @@ public class GameMenu : MonoBehaviour {
 	
 	[Header("UI Panels")]
 	public GameObject theMenu;
-	public GameObject charSelectPanel, charLoadoutPanel, charEquipComp;
+	public GameObject charSelectPanel, charLoadoutPanel;
+	public CharacterEquipment characterEquipment;
 	public GameObject[] menuWindows;
+	
 
 	[Header("Character UI Info")]
 	private CharacterStats[] _playerStats;
@@ -229,21 +231,13 @@ public class GameMenu : MonoBehaviour {
 	}
 
 	public void OpenEquipmentComparison() {
-
-		if (CharacterEquipment.Instance) {
-			if(Keyboard.current.shiftKey.wasPressedThisFrame && !charLoadoutPanel.activeInHierarchy) {
-				Debug.Log("shiftKey pressed");
-			
-				CharacterEquipment.Instance.GetCharacterStats(currentCharacterObj, curCharWeapon, activeItem);
-				charLoadoutPanel.SetActive(true);
-			} 
 		
-			if(charLoadoutPanel && Keyboard.current.shiftKey.wasPressedThisFrame) {
-			
-				charLoadoutPanel.SetActive(false);
-			}
-		}
-
+		if(Keyboard.current.shiftKey.wasPressedThisFrame) {
+			Debug.Log("shiftKey pressed");
+		
+			characterEquipment.GetCharacterStats(currentCharacterObj, curCharWeapon, activeItem);
+			charLoadoutPanel.SetActive(!charLoadoutPanel.activeInHierarchy);
+		} 
 	}
 
 	public void AddRemoveItemTest() {

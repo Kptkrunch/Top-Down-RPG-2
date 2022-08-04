@@ -35,7 +35,7 @@ public class CharacterStats : MonoBehaviour {
 	}
 
 	private void Update() {
-		PopulateWepArmValues();
+		// PopulateWepArmValues();
 	}
 
 	private void AddExp(int expToAdd) {
@@ -54,20 +54,20 @@ public class CharacterStats : MonoBehaviour {
 		}
 	}
 
-	private void PopulateWepArmValues() {
-		for (int i = 0; i < GameManager.Instance.referenceItems.Length; i++) {
-			
-			if (equippedWeapon == GameManager.Instance.referenceItems[i].itemName) {
-				weaponAttPow = GameManager.Instance.referenceItems[i].weaponAttack;
-				weaponSprite.sprite = GameManager.Instance.referenceItems[i].itemSprite;
-			}
-			
-			if (equippedArmor == GameManager.Instance.referenceItems[i].itemName) {
-				armorDefPow = GameManager.Instance.referenceItems[i].armorDefense;
-				armorSprite.sprite = GameManager.Instance.referenceItems[i].itemSprite;
-			}
-		}
-	}
+	// private void PopulateWepArmValues() {
+	// 	for (int i = 0; i < GameManager.Instance.referenceItems.Length; i++) {
+	// 		
+	// 		if (equippedWeapon == GameManager.Instance.referenceItems[i].itemName) {
+	// 			weaponAttPow = GameManager.Instance.referenceItems[i].weaponAttack;
+	// 			weaponSprite.sprite = GameManager.Instance.referenceItems[i].itemSprite;
+	// 		}
+	// 		
+	// 		if (equippedArmor == GameManager.Instance.referenceItems[i].itemName) {
+	// 			armorDefPow = GameManager.Instance.referenceItems[i].armorDefense;
+	// 			armorSprite.sprite = GameManager.Instance.referenceItems[i].itemSprite;
+	// 		}
+	// 	}
+	// }
 
 	private void PopulateExpGoals(float multiplier) {
 		print("exp goals populated");

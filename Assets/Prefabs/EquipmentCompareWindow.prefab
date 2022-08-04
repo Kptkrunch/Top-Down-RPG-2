@@ -1790,7 +1790,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7661982814827450668
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1862,18 +1862,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c934cce33cbaf3e44b7cb6f24b5c1d71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wpnSprite: {fileID: 0}
-  armSprite: {fileID: 0}
-  currentCharSprite: {fileID: 0}
-  curWpnName: {fileID: 7661982814718798321}
-  curArmName: {fileID: 0}
-  newItemName: {fileID: 0}
+  wpnSprite: {fileID: 7661982813327108692}
+  armSprite: {fileID: 7661982814160752359}
+  currentCharSprite: {fileID: 7661982813233081378}
+  newItemSprite: {fileID: 7661982813171546960}
+  curWpnName: {fileID: 7661982814181238156}
+  curArmName: {fileID: 7661982814181238156}
+  newItemName: {fileID: 7661982812939867354}
   curWpnAttack: {fileID: 7661982814718798321}
-  curArmorDefense: {fileID: 0}
+  curArmorDefense: {fileID: 7661982814693287629}
   newWpnAttack: {fileID: 7661982814273675142}
-  newArmorDefense: {fileID: 0}
+  newArmorDefense: {fileID: 7661982814241607352}
   atkDifference: {fileID: 7661982814001867103}
-  dfsDifference: {fileID: 0}
+  dfsDifference: {fileID: 7661982813218964939}
   wpnAtk: 0
   armDfs: 0
   newWpnAtkVal: 0

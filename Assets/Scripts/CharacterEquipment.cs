@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -16,7 +17,13 @@ public class CharacterEquipment : MonoBehaviour {
 	private void Start() {
 		Instance = this;
 	}
-	
+
+	private void Update() {
+		GetCharacterStats(GameMenu.Instance.currentCharacterObj,
+			GameMenu.Instance.curCharWeapon, 
+			GameMenu.Instance.activeItem);
+	}
+
 	public void GetCharacterStats(CharacterStats curCharacter, Item curItem, Item newItem) {
 		Debug.Log("getting character stats");
 		
