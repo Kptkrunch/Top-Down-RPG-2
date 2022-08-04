@@ -232,6 +232,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theMenu: {fileID: 3843944005981524663}
+  charSelectPanel: {fileID: 0}
+  charEquipComparePanel: {fileID: 0}
+  charEquipComp: {fileID: 0}
   menuWindows:
   - {fileID: 2272601648659154150}
   - {fileID: 7111927683495535836}
@@ -297,10 +300,20 @@ MonoBehaviour:
   lvlStatus: {fileID: 927836513759833780}
   attStatus: {fileID: 2585676736112071365}
   defStatus: {fileID: 4637391835814060124}
+  wepStatus: {fileID: 0}
+  armStatus: {fileID: 0}
+  wepAtt: {fileID: 0}
+  armDef: {fileID: 0}
   imageStatus: {fileID: 8199457638584472524}
   itemStorageArray: []
+  characterSelectButtonArray: []
   selectedItem: 
   activeItem: {fileID: 0}
+  curCharWeapon: {fileID: 0}
+  curCharArmor: {fileID: 0}
+  selectedChar: 
+  activeCharacterButton: {fileID: 0}
+  currentCharacterObj: {fileID: 0}
   itemName: {fileID: 0}
   itemDescription: {fileID: 0}
   useButtonText: {fileID: 0}

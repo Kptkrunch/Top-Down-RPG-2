@@ -240,11 +240,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1253365087816005542, guid: ac333d58a31a3304c83e5ddba3d13cbc, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1253365087816005542, guid: ac333d58a31a3304c83e5ddba3d13cbc, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1253365088271834608, guid: ac333d58a31a3304c83e5ddba3d13cbc, type: 3}
       propertyPath: m_Name
@@ -361,11 +361,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 265397072933730365, guid: 24354e9565edab742af5b4b116e9e663, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 265397072933730365, guid: 24354e9565edab742af5b4b116e9e663, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 265397072933730366, guid: 24354e9565edab742af5b4b116e9e663, type: 3}
       propertyPath: m_Color.g
@@ -486,11 +486,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4185465831986400508, guid: dfd391cf30974414e8deb938af528042, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4185465831986400508, guid: dfd391cf30974414e8deb938af528042, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4185465833156807619, guid: dfd391cf30974414e8deb938af528042, type: 3}
       propertyPath: m_Pivot.x

@@ -7,7 +7,7 @@ public class GameMenu : MonoBehaviour {
 	
 	[Header("UI Panels")]
 	public GameObject theMenu;
-	public GameObject charSelectPanel;
+	public GameObject charSelectPanel, charLoadoutPanel, charEquipComp;
 	public GameObject[] menuWindows;
 
 	[Header("Character UI Info")]
@@ -29,10 +29,14 @@ public class GameMenu : MonoBehaviour {
 	[Header("Item Process Info")]
 	public string selectedItem;
 	public Item activeItem;
+	public Item curCharWeapon;
+	public Item curCharArmor;
 	
 	[Header("Character Select Process Info")]
 	public string selectedChar;
-	public CharacterSelectButton activeCharacter;
+	public CharacterSelectButton activeCharacterButton;
+	public CharacterStats currentCharacterObj;
+	
 	[Header("Item Data")]
 	public TextMeshProUGUI itemName, itemDescription, useButtonText; 
 	public static GameMenu Instance;
@@ -45,6 +49,7 @@ public class GameMenu : MonoBehaviour {
 		OpenCloseMenu();
 		UpdateTabs();
 		AddRemoveItemTest();
+		OpenEquipmentComparison();
 	}
 	
 	private void OpenCloseMenu() {
@@ -83,8 +88,11 @@ public class GameMenu : MonoBehaviour {
 			}
 		}
 		
-	}
+	}// populates player stats
 	public void UpdateStatsScreen(int characterSelected) {
+
+		currentCharacterObj = _playerStats[characterSelected];
+		
 		for (int i = 0; i < _playerStats.Length; i++) {
 
 			if (i == characterSelected) {
@@ -152,7 +160,6 @@ public class GameMenu : MonoBehaviour {
 			}
 		}
 	}
-
 	public void ShowCharacterChoices() {
 
 		if (!charSelectPanel.activeInHierarchy) {
@@ -171,8 +178,6 @@ public class GameMenu : MonoBehaviour {
 		}
 		charSelectPanel.SetActive(true);
 	}
-
-	
 	public void SelectItem(Item clickedItem) {
 		
 		activeItem = clickedItem;
@@ -185,7 +190,6 @@ public class GameMenu : MonoBehaviour {
 		itemName.text = activeItem.itemName;
 		itemDescription.text = activeItem.itemDescription;
 	}
-
 	public void DropItem() {
 		if (activeItem) {
 			GameManager.Instance.RemoveItem(activeItem.itemName);
@@ -194,17 +198,52 @@ public class GameMenu : MonoBehaviour {
 
 	public void UseItem(int currentCharacter) {
 
+		OpenCharacterSelection(currentCharacter);
+		UpdateStatsScreen(currentCharacter);
+		UpdateMainStats();
+	}
+
+	public void UnequipItem(int currentCharacter) {
+		Debug.Log("stage 0");
+
+		if (_playerStats[currentCharacter].equippedWeapon != "" || _playerStats[currentCharacter].equippedArmor != "") {
+			Debug.Log("or conditional");
+			
+			if (Keyboard.current.ctrlKey.isPressed && Mouse.current.leftButton.wasPressedThisFrame) {
+				Debug.Log($"Comparison should open {_playerStats[currentCharacter].equippedWeapon}");
+			} 
+		}
+	}
+
+	public void OpenCharacterSelection(int charSelected) {
+		
 		for (int i = 0; i < GameManager.Instance.itemsHeld.Length; i++) {
 
 			if (activeItem.itemName == GameManager.Instance.itemsHeld[i]) {
 				if (GameManager.Instance.itemQuantity[i] > 0) {
-					activeItem.UseOrEquip(currentCharacter);
+					activeItem.UseOrEquip(charSelected);
 					ShowCharacterChoices();
 				}
 			}
 		}
-		UpdateStatsScreen(currentCharacter);
-		UpdateMainStats();
+	}
+
+	public void OpenEquipmentComparison() {
+
+		if (CharacterEquipment.Instance) {
+			if(Keyboard.current.shiftKey.wasPressedThisFrame && !charLoadoutPanel.activeInHierarchy) {
+				Debug.Log("shiftKey pressed");
+			
+				CharacterEquipment.Instance.GetCharacterStats(currentCharacterObj, curCharWeapon, activeItem);
+				charLoadoutPanel.SetActive(true);
+			} 
+		
+			if(charLoadoutPanel && Keyboard.current.shiftKey.wasPressedThisFrame) {
+			
+				charLoadoutPanel.SetActive(false);
+			}
+		}
+
 	}
 
 	public void AddRemoveItemTest() {

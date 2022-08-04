@@ -71,5 +71,24 @@ public class Item : MonoBehaviour {
 		}
 		GameMenu.Instance.DropItem();
 	}
+
+	public void Unequip(int selectedChar) {
+		CharacterStats charSelected = GameManager.Instance.playerStats[selectedChar];
+	
+		if (isWeapon) {
+			charSelected.attackPower -= charSelected.weaponAttPow;
+			charSelected.weaponAttPow = 0;
+			GameManager.Instance.AddItem(charSelected.equippedWeapon);
+			charSelected.equippedWeapon = "";
+		}
+		
+		if (isArmor) {
+			charSelected.defense -= charSelected.armorDefPow;
+			charSelected.armorDefPow = 0;
+			GameManager.Instance.AddItem(charSelected.equippedArmor);
+			charSelected.equippedArmor = "";
+		}
+	
+	}
 }
 
