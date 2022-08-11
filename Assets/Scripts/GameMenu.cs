@@ -7,8 +7,7 @@ public class GameMenu : MonoBehaviour {
 	
 	[Header("UI Panels")]
 	public GameObject theMenu;
-	public GameObject charSelectPanel, charLoadoutPanel;
-	public CharacterEquipment characterEquipment;
+	public GameObject charSelectPanel;
 	public GameObject[] menuWindows;
 	
 
@@ -31,8 +30,7 @@ public class GameMenu : MonoBehaviour {
 	[Header("Item Process Info")]
 	public string selectedItem;
 	public Item activeItem;
-	public Item curCharWeapon;
-	public Item curCharArmor;
+	public Item testItem;
 	
 	[Header("Character Select Process Info")]
 	public string selectedChar;
@@ -51,7 +49,6 @@ public class GameMenu : MonoBehaviour {
 		OpenCloseMenu();
 		UpdateTabs();
 		AddRemoveItemTest();
-		OpenEquipmentComparison();
 	}
 	
 	private void OpenCloseMenu() {
@@ -197,26 +194,23 @@ public class GameMenu : MonoBehaviour {
 			GameManager.Instance.RemoveItem(activeItem.itemName);
 		}
 	}
-
 	public void UseItem(int currentCharacter) {
 
 		OpenCharacterSelection(currentCharacter);
 		UpdateStatsScreen(currentCharacter);
 		UpdateMainStats();
 	}
-
 	public void UnequipItem(int currentCharacter) {
-		Debug.Log("stage 0");
-
+		Debug.Log("unequip item called");
+	
 		if (_playerStats[currentCharacter].equippedWeapon != "" || _playerStats[currentCharacter].equippedArmor != "") {
-			Debug.Log("or conditional");
+			Debug.Log("inside first if, armor or weapon not null");
 			
 			if (Keyboard.current.ctrlKey.isPressed && Mouse.current.leftButton.wasPressedThisFrame) {
 				Debug.Log($"Comparison should open {_playerStats[currentCharacter].equippedWeapon}");
 			} 
 		}
 	}
-
 	public void OpenCharacterSelection(int charSelected) {
 		
 		for (int i = 0; i < GameManager.Instance.itemsHeld.Length; i++) {
@@ -228,16 +222,6 @@ public class GameMenu : MonoBehaviour {
 				}
 			}
 		}
-	}
-
-	public void OpenEquipmentComparison() {
-		
-		if(Keyboard.current.shiftKey.wasPressedThisFrame) {
-			Debug.Log("shiftKey pressed");
-		
-			characterEquipment.GetCharacterStats(currentCharacterObj, curCharWeapon, activeItem);
-			charLoadoutPanel.SetActive(!charLoadoutPanel.activeInHierarchy);
-		} 
 	}
 
 	public void AddRemoveItemTest() {
