@@ -51,14 +51,18 @@ MonoBehaviour:
   maxLevel: 100
   baseExp: 100
   increaseMultiplier: 1.1
-  currentHp: 75
+  currentHp: 48
   maxHp: 75
-  currentMana: 150
+  currentMana: 96
   maxMana: 160
   attackPower: 17
   defense: 2
   equippedWeapon: 
+  weaponAttPow: 0
+  weaponSprite: {fileID: 0}
   equippedArmor: 
+  armorDefPow: 0
+  armorSprite: {fileID: 0}
   characterImage: {fileID: 36672321, guid: 42991d1e550b6b54fb16ce5446d5e5c5, type: 3}
 --- !u!1 &8865446771923688255
 GameObject:
@@ -111,14 +115,18 @@ MonoBehaviour:
   maxLevel: 100
   baseExp: 100
   increaseMultiplier: 1.1
-  currentHp: 85
+  currentHp: 35
   maxHp: 110
-  currentMana: 40
+  currentMana: 5
   maxMana: 45
   attackPower: 10
   defense: 10
   equippedWeapon: 
+  weaponAttPow: 0
+  weaponSprite: {fileID: 0}
   equippedArmor: 
+  armorDefPow: 0
+  armorSprite: {fileID: 0}
   characterImage: {fileID: -940284557, guid: 42991d1e550b6b54fb16ce5446d5e5c5, type: 3}
 --- !u!1 &8865446772019658248
 GameObject:
@@ -180,7 +188,7 @@ MonoBehaviour:
   - 
   - 
   - 
-  - 
+  - HP Potion
   - 
   - 
   - 
@@ -224,7 +232,7 @@ MonoBehaviour:
   - 
   - 
   - 
-  - 
+  - Cherries
   - 
   - 
   - 
@@ -241,13 +249,16 @@ MonoBehaviour:
   - 
   - 
   - 
-  itemQuantity: 00000000000000000000000000000000000000000000000000000000050000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000
+  itemQuantity: 00000000000000000000000005000000000000000000000000000000050000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000
   referenceItems:
   - {fileID: 887849125706236114, guid: 03e0526e98850ca4f8bccd5d6caf949d, type: 3}
   - {fileID: 26824296222619420, guid: bfac005fd8a64fc41abc24d6a2e03fed, type: 3}
   - {fileID: 7476483550239003978, guid: d9b7aebd09432224ba75bd94f7a75ad5, type: 3}
   - {fileID: 5276350335038374499, guid: 87d74fb4e85a0f04caddf0a98111c4e2, type: 3}
   - {fileID: 1305564339820176858, guid: b26c8f48541707a4dba16304d82950ac, type: 3}
+  - {fileID: 26824296222619420, guid: ddaf92ae86905cc4094515f4d78039f4, type: 3}
+  mousePosition: {x: 0, y: 0}
+  currentGold: 87
 --- !u!1 &8865446772982967353
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,14 +310,18 @@ MonoBehaviour:
   maxLevel: 100
   baseExp: 100
   increaseMultiplier: 1.1
-  currentHp: 90
+  currentHp: 43
   maxHp: 90
-  currentMana: 50
+  currentMana: 13
   maxMana: 50
   attackPower: 12
   defense: 8
   equippedWeapon: 
+  weaponAttPow: 0
+  weaponSprite: {fileID: 0}
   equippedArmor: 
+  armorDefPow: 0
+  armorSprite: {fileID: 0}
   characterImage: {fileID: -542455922, guid: 42991d1e550b6b54fb16ce5446d5e5c5, type: 3}
 --- !u!1 &8865446773111305628
 GameObject:
@@ -359,12 +374,16 @@ MonoBehaviour:
   maxLevel: 100
   baseExp: 100
   increaseMultiplier: 1.1
-  currentHp: 150
+  currentHp: 43
   maxHp: 150
-  currentMana: 10
+  currentMana: 2
   maxMana: 10
   attackPower: 11
   defense: 13
   equippedWeapon: 
+  weaponAttPow: 0
+  weaponSprite: {fileID: 0}
   equippedArmor: 
+  armorDefPow: 0
+  armorSprite: {fileID: 0}
   characterImage: {fileID: -1670268655, guid: 42991d1e550b6b54fb16ce5446d5e5c5, type: 3}

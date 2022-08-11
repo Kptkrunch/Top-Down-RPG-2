@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour {
 	public int[] itemQuantity;
 	public Item[] referenceItems;
 	public Vector2 mousePosition;
+	public int currentGold = 99;
+	
 	private void Start() {
 		PersistGameManager();
 		DontDestroyOnLoad(gameObject);

@@ -28218,8 +28218,16 @@ PrefabInstance:
       value: GameManager
       objectReference: {fileID: 0}
     - target: {fileID: 8865446772019658249, guid: d638134deaaa2964985b5fb2c8102de1, type: 3}
+      propertyPath: currentGold
+      value: 87
+      objectReference: {fileID: 0}
+    - target: {fileID: 8865446772019658249, guid: d638134deaaa2964985b5fb2c8102de1, type: 3}
       propertyPath: itemsHeld.Array.data[3]
       value: HP Potion
+      objectReference: {fileID: 0}
+    - target: {fileID: 8865446772019658249, guid: d638134deaaa2964985b5fb2c8102de1, type: 3}
+      propertyPath: itemsHeld.Array.data[47]
+      value: Cherries
       objectReference: {fileID: 0}
     - target: {fileID: 8865446772019658249, guid: d638134deaaa2964985b5fb2c8102de1, type: 3}
       propertyPath: referenceItems.Array.size
@@ -30149,6 +30157,10 @@ PrefabInstance:
       propertyPath: wepAtt
       value: 
       objectReference: {fileID: 165702981}
+    - target: {fileID: 1924146556, guid: c7b8601912d545c4f975f4f816d6cdbb, type: 3}
+      propertyPath: goldText
+      value: 
+      objectReference: {fileID: 1890243161}
     - target: {fileID: 1924146556, guid: c7b8601912d545c4f975f4f816d6cdbb, type: 3}
       propertyPath: itemName
       value: 
@@ -43967,6 +43979,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d5394ebfe5889f54bb0926ac8c1e94c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1890243161 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2779229403291781432, guid: c7b8601912d545c4f975f4f816d6cdbb, type: 3}
+  m_PrefabInstance: {fileID: 1534900630}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1895139554

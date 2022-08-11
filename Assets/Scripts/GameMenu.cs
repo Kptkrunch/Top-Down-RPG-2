@@ -20,7 +20,7 @@ public class GameMenu : MonoBehaviour {
 	
 	[Header("Stat Menu Stats")]
 	public TextMeshProUGUI[] nameStatus;
-	public TextMeshProUGUI hpStatus, mpStatus, expStatus, nextExpStatus, lvlStatus, attStatus, defStatus, wepStatus, armStatus, wepAtt, armDef;
+	public TextMeshProUGUI hpStatus, mpStatus, expStatus, nextExpStatus, lvlStatus, attStatus, defStatus, wepStatus, armStatus, wepAtt, armDef, goldText;
 	public Image imageStatus;
 
 	[Header("UI Buttons")]
@@ -86,8 +86,9 @@ public class GameMenu : MonoBehaviour {
 				characterStatHolder[i].SetActive(false);
 			}
 		}
-		
-	}// populates player stats
+		goldText.text = "Gold: " + GameManager.Instance.currentGold;
+	}
+	
 	public void UpdateStatsScreen(int characterSelected) {
 
 		currentCharacterObj = _playerStats[characterSelected];
